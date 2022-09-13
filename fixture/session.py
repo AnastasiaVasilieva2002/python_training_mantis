@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import time
 
 class SessionHelper:
 
@@ -8,6 +9,7 @@ class SessionHelper:
 
     def login(self, username, password):
         wd = self.app.wd
+        time.sleep(2)
         self.app.open_home_page()
         wd.set_window_size(945, 1020)
         wd.find_element(By.NAME, "username").click()
